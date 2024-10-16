@@ -7,6 +7,11 @@ app.get('/', (req, res) => {
   res.send('Hello World!');
 });
 
+app.get('/rentickle', (req, res) => {
+    console.log('Hello Rentickle!');
+  res.send('Hello Rentickle!');
+});
+
 app.listen(port, () => {
   console.log(`Node app listening at http://localhost:${port}`);
 });
