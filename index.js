@@ -12,6 +12,11 @@ app.get('/rentickle', (req, res) => {
   res.send('Hello Rentickle!');
 });
 
+app.get('/rentickleio', (req, res) => {
+  console.log('Hello Rentickle!');
+res.send('Hello Rentickle! IO');
+});
+
 app.listen(port, () => {
   console.log(`Node app listening at http://localhost:${port}`);
 });
