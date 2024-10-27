@@ -14,7 +14,7 @@ app.get('/rentickle', (req, res) => {
 
 app.get('/rentickleio', (req, res) => {
   console.log('Hello Rentickle!');
-res.send('Hello Rentickle! IO');
+res.send('Hello Rentickle! i');
 });
 
 app.listen(port, () => {
