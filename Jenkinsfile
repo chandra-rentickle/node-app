@@ -1,25 +1,30 @@
 pipeline {
-  agent any
-  stages{
-    stage("checkout"){
-      steps{
-        checkout scm
-      }
-    }
-
-    stage("Test"){
-      steps{
-        sh 'sudo npm install'
-        // sh 'npm test'
-      }
-    }
-
-    stage("Build"){
-      steps{
-        steps{
-          sh 'npm run build'
+    agent any
+    stages {
+        stage('Clone') {
+            steps {
+                git branch: 'main', url: 'https://github.com/chandra-rentickle/node-app.git'
+            }
         }
-      }
+        stage('Install Dependencies') {
+            steps {
+                sh 'npm install --production'
+            }
+        }
+        stage('Build') {
+            steps {
+                sh 'npm run build'
+            }
+        }
+        stage('Test') {
+            steps {
+                sh 'npm test'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                sh 'npm run deploy'
+            }
+        }
     }
-  }
 }
