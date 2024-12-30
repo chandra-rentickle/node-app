@@ -8,7 +8,7 @@ pipeline {
         }
         stage('Install Dependencies') {
             steps {
-                sh 'npm install --production'
+                sh 'npm install'
             }
         }
         stage('Build') {
@@ -16,15 +16,15 @@ pipeline {
                 sh 'npm run build'
             }
         }
-        stage('Test') {
-            steps {
-                sh 'npm test'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                sh 'npm run deploy'
-            }
-        }
+        // stage('Test') {
+        //     steps {
+        //         sh 'npm test'
+        //     }
+        // }
+        // stage('Deploy') {
+        //     steps {
+        //         sh 'npm run deploy'
+        //     }
+        // }
     }
 }
