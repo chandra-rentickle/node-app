@@ -12,7 +12,8 @@
   "scripts": {
     "start": "node index.js",
     "test": "echo \"No tests specified\" && exit 0",
-    "build": "echo \"No build step specified\" && exit 0",
-    "deploy": "echo \"No deploy step specified\" && exit 0"
+    "build": "echo \"Build step not required for Express.js\" && exit 0",
+    "deploy": "echo \"Deploy step not required for Express.js\" && exit 0",
+    "netlify-build": "echo \"No build command for Netlify functions yet\" && exit 0"
   }
 }
